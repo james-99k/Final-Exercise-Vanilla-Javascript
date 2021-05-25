@@ -1,0 +1,169 @@
+body {
+  margin: 0% auto;
+  padding: 0%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.main__container .banner__background {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(245, 246, 252, 0.52)), to(rgba(117, 19, 93, 0.73))), url("images/6-things-to-do-list.webp");
+  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url("images/6-things-to-do-list.webp");
+  height: 40vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+}
+
+.main__container .banner__background h2 {
+  margin: 7% 0 0 35%;
+}
+
+.main__container .list__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 70%;
+  top: 200px;
+}
+
+.main__container .list__container .name__container, .main__container .list__container .task__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 25px;
+}
+
+.main__container .list__container .name__container .list__name, .main__container .list__container .task__container .list__name {
+  width: 475px;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 1%;
+  padding-left: 25px;
+}
+
+.main__container .list__container .name__container .task__list, .main__container .list__container .task__container .task__list {
+  width: 475px;
+  height: 250px;
+  padding: 10px 12px 50px 13px;
+  background-color: white;
+}
+
+.main__container .list__container .list__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 500px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  top: -60px;
+  color: gray;
+}
+
+.main__container .list__container .list__footer .task__counter {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding-left: 10px;
+}
+
+.main__container .list__container .list__footer .task__counter .task__count {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  width: 10px;
+  height: 15px;
+  border: 1px solid transparent;
+  color: black;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.main__container .list__container .list__footer .clear__button {
+  margin-left: 90px;
+}
+
+.main__container .list__container .list__footer .clear__button button {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 16px;
+  color: gray;
+}
+
+.main__container .body__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #cac7c7;
+  width: 100%;
+  height: 100vh;
+  padding-top: 400px;
+}
+
+.main__container .body__container .footer {
+  font-weight: bolder;
+}
+
+.main__container .list__functions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 500px;
+  height: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+}
+
+.main__container .list__functions--all, .main__container .list__functions--active, .main__container .list__functions--completed {
+  border: 1px solid transparent;
+  background-color: transparent;
+  font-weight: bolder;
+  color: gray;
+}
+/*# sourceMappingURL=style.css.map */
