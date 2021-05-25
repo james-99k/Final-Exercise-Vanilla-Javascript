@@ -21,6 +21,7 @@ function addTodo(e) {
     e.preventDefault();
     // Create elements
     const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
     const newTodo = document.createElement("li");
 
     newTodo.innerText = todoInput.value;
@@ -65,35 +66,35 @@ function deleteCheck(e) {
 
         // Animation
         todo.classList.add("fall");
-        removeLocalStorege(todo);
-        todo.addEventListener('transitionend', function () {
+        removeLocalStorage(todo);
+        todo.addEventListener("transitionend", e => {
             todo.remove();
-        })
+        });
     }
 }
 
 // FILTER
-function optionAll() {
-    const todo = todoList.childNodes;
+function optionAll(e) {
+    const todos = todoList.childNodes;
     todo.style.display = 'flex';
 }
 
-function optionCompleted() {
-    const todo = todoList.childNodes;
-    if (todo.classList.contains('completed')) {
-        todo.style.display = 'flex';
+function optionCompleted(e) {
+    const todos = todoList.childNodes;
+    if (todos.classList.contains("completed")) {
+        todos.style.display = "flex";
     } else {
-        todo.style.display = 'none';
+        todos.style.display = "none";
     }
 }
 
-function optionUncompleted() {
-    const todo = todoList.childNodes;
-    if (!todo.classList.contains('completed')) {
-        todo.style.display = 'flex';
-    } else {
-        todo.style.display = 'none';
-    }
+function optionUncompleted(e) {
+    const todos = todoList.childNodes;
+    if (!todos.classList.contains("completed")) {
+        todos.style.display = "flex";
+      } else {
+        todos.style.display = "none";
+      }
 }
 
 // LOCAL STORAGE
@@ -110,48 +111,45 @@ function saveLocalStorage(todo) {
 }
 
 function getTodos() {
-    // Check
     let todos;
-    if (localStorage.getItem('todos') === null) {
+    if (localStorage.getItem("todos") === null) {
         todos = [];
     } else {
-        todos = JSON.parse(localStorage.getItem('todos'));
+        todos = JSON.parse(localStorage.getItem("todos"));
     }
     todos.forEach(function (todo) {
-        // Create elements
+        //Create todo div
         const todoDiv = document.createElement("div");
+        todoDiv.classList.add("todo");
+        //Create list
         const newTodo = document.createElement("li");
-
         newTodo.innerText = todo;
-        newTodo.classList.add('todo-item');
+        newTodo.classList.add("todo-item");
         todoDiv.appendChild(newTodo);
-
-        // Check button
+        todoInput.value = "";
+        //Create Completed Button
         const completedButton = document.createElement("button");
-        completedButton.innerHTML = '<i class="fas fa-check"></i>'
+        completedButton.innerHTML = `<i class="fas fa-check"></i>`;
         completedButton.classList.add("complete-btn");
         todoDiv.appendChild(completedButton);
-
-        // Delete button
-        const deleteButton = document.createElement("button");
-        deleteButton.innerHTML = '<i class="fas fa-trash"></i>'
-        deleteButton.classList.add("delete-btn");
-        todoDiv.appendChild(deleteButton);
-
-        // Append to list
+        //Create trash button
+        const trashButton = document.createElement("button");
+        trashButton.innerHTML = `<i class="fas fa-trash"></i>`;
+        trashButton.classList.add("delete-btn");
+        todoDiv.appendChild(trashButton);
+        //attach final Todo
         todoList.appendChild(todoDiv);
     });
 }
 
-function removeLocalStorege(todo) {
-    // Check
+function removeLocalStorage(todo) {
     let todos;
-    if (localStorage.getItem('todos') === null) {
+    if (localStorage.getItem("todos") === null) {
         todos = [];
     } else {
-        todos = JSON.parse(localStorage.getItem('todos'));
+        todos = JSON.parse(localStorage.getItem("todos"));
     }
     const todoIndex = todo.children[0].innerText;
-    todo.splice(todos.indexOf(todoIndex), 1);
+    todos.splice(todos.indexOf(todoIndex), 1);
     localStorage.setItem("todos", JSON.stringify(todos));
 }
