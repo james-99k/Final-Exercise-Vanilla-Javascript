@@ -38,7 +38,6 @@ body{
         flex-direction: column;
         position: absolute;
         align-items: center;
-        width: 70%;
         top: 200px;
 
         .name__container, .task__container{
@@ -47,24 +46,42 @@ body{
             width: 100%;
             justify-content: center;
             margin-bottom: 25px;
+            border-radius: 6px;
+            padding: 0.5rem;
+            font-size: 2rem;
+            border: none;
+            background: white;
 
             .list__name{
-
-                width: 475px;
-                height: 40px;
-                border: 1px solid transparent;
-                border-radius: 1%;
-                padding-left: 25px;
-
+                padding: 0.5rem;
+                border: none;
+                width: 100%;
             }
 
             .task__list{
-
                 width: 475px;
                 height: 250px;
                 padding: 10px 12px 50px 13px;
                 background-color: white;
+                border-radius: 6px;
+                font-size: 12px;
 
+                .todo-item {
+                    display: flex;
+                }
+            }
+
+            #todoButton {
+                color: #ff6f47;
+                background: #f7fffe;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border: none;
+
+                &:hover {
+                    background: #ff6f47;
+                    color: white;
+                }
             }
 
         }
@@ -140,6 +157,7 @@ body{
         height: 50px;
         justify-content: center;
         background-color: white;
+        border-radius: 6px;
 
         &--all, &--active, &--completed{
 
@@ -153,3 +171,4 @@ body{
     }
 
 }
+

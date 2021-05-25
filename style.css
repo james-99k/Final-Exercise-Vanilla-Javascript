@@ -49,7 +49,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 70%;
   top: 200px;
 }
 
@@ -62,14 +61,17 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 25px;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
 }
 
 .main__container .list__container .name__container .list__name, .main__container .list__container .task__container .list__name {
-  width: 475px;
-  height: 40px;
-  border: 1px solid transparent;
-  border-radius: 1%;
-  padding-left: 25px;
+  padding: 0.5rem;
+  border: none;
+  width: 100%;
 }
 
 .main__container .list__container .name__container .task__list, .main__container .list__container .task__container .task__list {
@@ -77,6 +79,28 @@ body {
   height: 250px;
   padding: 10px 12px 50px 13px;
   background-color: white;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.main__container .list__container .name__container .task__list .todo-item, .main__container .list__container .task__container .task__list .todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main__container .list__container .name__container #todoButton, .main__container .list__container .task__container #todoButton {
+  color: #ff6f47;
+  background: #f7fffe;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.main__container .list__container .name__container #todoButton:hover, .main__container .list__container .task__container #todoButton:hover {
+  background: #ff6f47;
+  color: white;
 }
 
 .main__container .list__container .list__footer {
@@ -158,6 +182,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: white;
+  border-radius: 6px;
 }
 
 .main__container .list__functions--all, .main__container .list__functions--active, .main__container .list__functions--completed {
