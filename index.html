@@ -12,6 +12,7 @@
         integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
@@ -39,27 +40,29 @@
             <form class="name__container">
                 <input type="text" name="list" class="list__name" placeholder="Create a new to do list..."
                     id="todoInput">
-                <button id="todoButton" type="submit">
-                    <i class="fas fa-plus-square"></i>
+                <button id="todoButton" onclick="addElement()">
+                    <i class="fas fa-plus"></i>
                 </button>
             </form>
             <div class="task__container">
-                <ul class="task__list" id="todoList">
-                </ul>
+                <div class="task__list" id="todo-list">
+                </div>
+
             </div>
             <div class="list__footer">
                 <div class="task__counter">
-                    <input type="text" name="task__count" class="task__count" placeholder="0">
-                    <label for="task__count">items left</label>
+                    <input type="text" name="task__count" class="task__count" id="count" value="0" disabled>
+                    <label for="task__count">items</label>
                 </div>
                 <div class="clear__button">
-                    <button class="clear__task">Clear Completed</button>
+                    <button class="clear__task" id="clearCompleted" onclick="delCompleted()">Clear Completed</button>
                 </div>
             </div>
             <div class="list__functions">
-                <button class="list__functions--all" id="filterAll">All</button>
-                <button class="list__functions--active" id="filterCompleted">Active</button>
-                <button class="list__functions--completed" id="filterUncompleted">Completed</button>
+                <button class="list__functions--all" onclick="filterAll()" value="all">All</button>
+                <button class="list__functions--complete" onclick="filterCompleted()" value="complete">Complete</button>
+                <button class="list__functions--ongoing" onclick="filterOngoing()" value="ongoing">Ongoing</button>
+                
             </div>
 
         </div>
