@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
 </head>
+
 <body>
 
     <div class="main__container">
@@ -31,15 +36,18 @@
 
         <div class="list__container">
 
-            <div class="name__container">
-                <input type="text" name="list"class="list__name" placeholder="Create a new to do list...">
-            </div>
+            <form class="name__container">
+                <input type="text" name="list" class="list__name" placeholder="Create a new to do list..."
+                    id="todoInput">
+                <button id="todoButton" type="submit">
+                    <i class="fas fa-plus-square"></i>
+                </button>
+            </form>
             <div class="task__container">
-                <div class="task__list">
 
+                <ul class="task__list" id="todoList">
+                </ul>
 
-
-                </div>
             </div>
             <div class="list__footer">
                 <div class="task__counter">
@@ -49,16 +57,18 @@
                 <div class="clear__button">
                     <button class="clear__task">Clear Completed</button>
                 </div>
-            </div>      
+            </div>
             <div class="list__functions">
-                <button class="list__functions--all">All</button>
-                <button class="list__functions--active">Active</button>
-                <button class="list__functions--completed">Completed</button>
+                <button class="list__functions--all" id="filterAll">All</button>
+                <button class="list__functions--active" id="filterCompleted">Active</button>
+                <button class="list__functions--completed" id="filterUncompleted">Completed</button>
             </div>
 
         </div>
 
     </div>
-    
+
+    <script src="script.js"></script>
 </body>
+
 </html>
