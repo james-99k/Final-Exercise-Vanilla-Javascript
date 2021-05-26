@@ -39,7 +39,7 @@
                 <input type="text" name="list" class="list__name" placeholder="Create a new to do list..."
                     id="todoInput">
                 <button id="todoButton" onclick="addElement()">
-                    <i class="fas fa-plus-square"></i>
+                    <i class="fas fa-plus"></i>
                 </button>
             </form>
             <div class="task__container">
@@ -52,13 +52,13 @@
                     <label for="task__count">items</label>
                 </div>
                 <div class="clear__button">
-                    <button class="clear__task" id="clearCompleted">Clear Completed</button>
+                    <button class="clear__task" id="clearCompleted" onclick="delCompleted()">Clear Completed</button>
                 </div>
             </div>
             <div class="list__functions">
-                <button class="list__functions--all" id="filterAll" value="all">All</button>
-                <button class="list__functions--active" id="filterCompleted" value="complete">Complete</button>
-                <button class="list__functions--completed" id="filterUncompleted" value="uncomplete">Ongoing</button>
+                <button class="list__functions--all" onclick="filterAll()" value="all">All</button>
+                <button class="list__functions--complete" onclick="filterCompleted()" value="complete">Complete</button>
+                <button class="list__functions--ongoing" onclick="filterOngoing()" value="ongoing">Ongoing</button>
                 
             </div>
 

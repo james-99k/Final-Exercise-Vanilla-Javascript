@@ -60,7 +60,7 @@ body{
 
             .task__list{
                 width: 475px;
-                height: 250px;
+                height: 100%;
                 padding: 10px 12px 50px 13px;
                 background-color: white;
                 border-radius: 6px;
@@ -110,8 +110,9 @@ body{
                 border: none;
                 background: none;
                 
-                .fa-plus-square {
+                .fa-plus {
                     padding: 5px 5px;
+                    font-weight: 600;
                     color: blue;
 
                     &:hover {
@@ -162,6 +163,13 @@ body{
                     font-size: 16px;
                     color: gray;
 
+                    &:hover {
+                        cursor: pointer;
+                        color: white;
+                        background: gray;
+                        border-radius: 6px;
+                    }
+
                 }
             }
 
@@ -195,18 +203,35 @@ body{
         width: 500px;
         height: 50px;
         justify-content: center;
+        align-items: center;
         background-color: white;
         border-radius: 6px;
 
-        &--all, &--active, &--completed{
+        &--all, &--complete, &--ongoing{
 
             border: 1px solid transparent;
             background-color: transparent;
             font-weight: bolder;
             color: gray;
+            height: 20px;
+
+            &:hover {
+                cursor: pointer;
+                color: white;
+                background: gray;
+                border-radius: 6px;
+            }
 
         }
 
     }
 
+}
+
+.none {
+    display: none;
+}
+
+.flex {
+    display: flex;
 }

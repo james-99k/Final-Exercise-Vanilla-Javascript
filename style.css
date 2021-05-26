@@ -76,7 +76,7 @@ body {
 
 .main__container .list__container .name__container .task__list, .main__container .list__container .task__container .task__list {
   width: 475px;
-  height: 250px;
+  height: 100%;
   padding: 10px 12px 50px 13px;
   background-color: white;
   border-radius: 6px;
@@ -128,12 +128,13 @@ body {
   background: none;
 }
 
-.main__container .list__container .name__container #todoButton .fa-plus-square, .main__container .list__container .task__container #todoButton .fa-plus-square {
+.main__container .list__container .name__container #todoButton .fa-plus, .main__container .list__container .task__container #todoButton .fa-plus {
   padding: 5px 5px;
+  font-weight: 600;
   color: blue;
 }
 
-.main__container .list__container .name__container #todoButton .fa-plus-square:hover, .main__container .list__container .task__container #todoButton .fa-plus-square:hover {
+.main__container .list__container .name__container #todoButton .fa-plus:hover, .main__container .list__container .task__container #todoButton .fa-plus:hover {
   cursor: pointer;
   background: blue;
   color: white;
@@ -187,6 +188,13 @@ body {
   color: gray;
 }
 
+.main__container .list__container .list__footer .clear__button button:hover {
+  cursor: pointer;
+  color: white;
+  background: gray;
+  border-radius: 6px;
+}
+
 .main__container .body__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -218,14 +226,35 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: white;
   border-radius: 6px;
 }
 
-.main__container .list__functions--all, .main__container .list__functions--active, .main__container .list__functions--completed {
+.main__container .list__functions--all, .main__container .list__functions--complete, .main__container .list__functions--ongoing {
   border: 1px solid transparent;
   background-color: transparent;
   font-weight: bolder;
   color: gray;
+  height: 20px;
+}
+
+.main__container .list__functions--all:hover, .main__container .list__functions--complete:hover, .main__container .list__functions--ongoing:hover {
+  cursor: pointer;
+  color: white;
+  background: gray;
+  border-radius: 6px;
+}
+
+.none {
+  display: none;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=style.css.map */

@@ -58,3 +58,15 @@ function strike(index) {
     }
     display();
 }
+
+// function delCompleted() {
+// }
+
+// function filterAll() {
+// }
+
+// function filterCompleted(index) {
+// }
+
+// function filterOngoing() {
+// }
