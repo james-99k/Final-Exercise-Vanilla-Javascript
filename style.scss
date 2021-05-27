@@ -3,6 +3,7 @@ body{
     margin: 0% auto;
     padding: 0%;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(202, 199, 199);
 
 }
 
@@ -102,6 +103,18 @@ body{
                                 border-radius: 6px;
                             }
                         }
+
+                        .fa-edit {
+                            padding: 5px 5px;
+                            color: grey;
+
+                            &:hover {
+                                cursor: pointer;
+                                background: grey;
+                                color: white;
+                                border-radius: 6px;
+                            }
+                        }
                     }
                 }
             }
@@ -197,27 +210,27 @@ body{
 
         }
 
+        .body__container{
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 50px;
+            background: none;
+    
+            .footer{
+    
+                font-weight: bolder;
+    
+            }
+    
+        }
+
         
     }
 
-    .body__container{
-
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        align-items: center;
-        background-color: rgb(202, 199, 199);
-        width: 100%;
-        height: 100vh;
-        padding-top: 400px;
-
-        .footer{
-
-            font-weight: bolder;
-
-        }
-
-    }
+    
 
 
     .list__functions{
