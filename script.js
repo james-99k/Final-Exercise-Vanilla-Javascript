@@ -62,12 +62,12 @@ function strike(index) {
 }
 
 function delCompleted() {
-    elements.splice("<strike>");
-    if (localStorage.getItem("elements") == null) {
-        localStorage.setItem("elements", JSON.stringify(elements));
-    } else {
-        localStorage.setItem("elements", JSON.stringify(elements));
+    for (var i = 0; i < elements.length; i++) {
+        if (elements[i].includes("<strike>")) {
+            elements[i].splice(i, 1);
+        }
     }
+    display();
 }
 
 // function filterAll() {
@@ -78,3 +78,14 @@ function delCompleted() {
 
 // function filterOngoing() {
 // }
+
+function darkMode() {
+    document.querySelector(".banner__background").style.backgroundImage="linear-gradient(to bottom,rgba(56, 56, 56, 0.52), rgba(20, 15, 19, 0.73)), url('images/6-things-to-do-list.webp')";
+    document.querySelector("body").style.background = "	#181818";
+    document.querySelector(".name__container").style.background = "	#404040";
+    document.querySelector(".list__name").style.background = "	#404040";
+    document.querySelector(".task__container").style.background = "	#404040";
+    document.querySelector(".task__list").style.background = "	#404040";
+    document.querySelector(".list__functions").style.background = "	#404040";
+    document.querySelector(".list__functions").style.background = "	#404040";
+}

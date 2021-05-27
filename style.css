@@ -34,8 +34,34 @@ body {
   color: white;
 }
 
-.main__container .banner__background h2 {
+.main__container .banner__background .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main__container .banner__background .title h2 {
   margin: 7% 0 0 35%;
+}
+
+.main__container .banner__background .title .fa-moon {
+  margin: 7% 0 0 350px;
+  font-size: 20px;
+}
+
+.main__container .banner__background .title .fa-moon:hover {
+  cursor: pointer;
+  color: yellow;
+}
+
+.main__container .banner__background .title .fa-sun {
+  margin: 7% 0 0 10px;
+  font-size: 20px;
+}
+
+.main__container .banner__background .title .fa-sun:hover {
+  cursor: pointer;
+  color: yellow;
 }
 
 .main__container .list__container {
@@ -200,7 +226,7 @@ body {
   width: 10px;
   height: 15px;
   border: 1px solid transparent;
-  color: black;
+  color: gray;
   -ms-flex-item-align: start;
       align-self: flex-start;
   background-color: transparent;
