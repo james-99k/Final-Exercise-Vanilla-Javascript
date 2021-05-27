@@ -1,6 +1,6 @@
 var elements = [];
 
-window.onload = function () {
+window.onload = function (e) {
     if (JSON.parse(localStorage.getItem("elements")) != null)
         elements = JSON.parse(localStorage.getItem("elements"));
     console.log(elements);
@@ -28,6 +28,8 @@ function display() {
             "<center><div class='element'>" +
             elements[i] +
             "<div class='buttons'><i class='fas fa-check' onclick='strike(" +
+            i +
+            ")'></i><i class='fas fa-edit' onclick='edit(" +
             i +
             ")'></i><i class='fas fa-trash' onclick='del(" +
             i +
@@ -59,8 +61,14 @@ function strike(index) {
     display();
 }
 
-// function delCompleted() {
-// }
+function delCompleted() {
+    elements.splice("<strike>");
+    if (localStorage.getItem("elements") == null) {
+        localStorage.setItem("elements", JSON.stringify(elements));
+    } else {
+        localStorage.setItem("elements", JSON.stringify(elements));
+    }
+}
 
 // function filterAll() {
 // }
