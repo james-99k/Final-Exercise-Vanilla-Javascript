@@ -10,64 +10,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
         integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="test.css">
 </head>
 
 <body>
 
-    <div class="main__container">
-
-
-        <div class="banner__background">
-            <div class="title">
-                <h2>TO DO</h2>
-                <i class="fas fa-moon" onclick="darkMode()"></i>
-                <i class="fas fa-sun" onclick="location.href='index.html'"></i>
-            </div>
-        </div>
-
-        <div class="list__container">
-
-            <form class="name__container">
-                <input type="text" name="list" class="list__name" placeholder="Create a new to do list..."
-                    id="todoInput">
-                <button id="todoButton">
-                    <i class="fas fa-plus"></i>
-                </button>
-            </form>
-            <div class="task__container">
-                <div class="task__list" id="todo-list">
-                </div>
-
-            </div>
-            <div class="list__footer">
-                <div class="task__counter">
-                    <input type="text" name="task__count" class="task__count" id="count" value="0" disabled>
-                    <label for="task__count">items</label>
-                </div>
-                <div class="clear__button">
-                    <button class="clear__task" id="clearCompleted" onclick="delCompleted()">Clear Completed</button>
-                </div>
-            </div>
-            <div class="list__functions">
-                <button class="list__functions--all" onclick="filterAll()" value="all">All</button>
-                <button class="list__functions--complete" onclick="filterCompleted()" value="complete">Complete</button>
-                <button class="list__functions--ongoing" onclick="filterOngoing()" value="ongoing">Ongoing</button>
-                
-            </div>
-
-            <div class="body__container">
-
-                <p class="instruction">Drag and drop reorder list.</p>
-    
-                <p class="footer">Powered by Vercel.</p>
-    
-            </div>
-
-        </div>
+    <div class="header-img">
 
     </div>
+    <main>
+        <div class="header">
+            <h1>TODO</h1>
+            <div onclick="changeTheme()" class="header__toggle-btn">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+        <div class="type-todo">
+            <div class="circle"></div>
+            <input type="text" id="todo-input">
+        </div>
+        <div class="todos"></div>
+        <div class="remarks">
+            <div class="completedCount small-size"></div>
+            <div class="small-size cursor" onclick="clearCompleted()">Clear Completed</div>
+            <div class="filters">
+                <div class="filterActive cursor" onclick="showAll()">All</div>
+                <div class="cursor" onclick="filterActive()">Active</div>
+                <div class="cursor" onclick="filterCompleted()">Completed</div>
+            </div>
+        </div>
+    </main>
 
     <script src="test.js"></script>
 </body>
