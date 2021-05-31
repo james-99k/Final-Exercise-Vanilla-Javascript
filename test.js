@@ -19,12 +19,19 @@ function isBefore(el1, el2) {
     return false;
 }
 
+window.onload = function (e) {
+    if (JSON.parse(localStorage.getItem("todos")) != null)
+        elements = JSON.parse(localStorage.getItem("todos"));
+    console.log(elements);
+};
+
 todoInput.addEventListener("keyup", function (e) {
     if (e.key === "Enter" || e.keyCode === 13) {
         //if (e.target.value !== "") createTodo(e.target.value);
         todos.push({ value: e.target.value, checked: false });
         newTodo(e.target.value);
         todoInput.value = "";
+        localStorage.setItem("todos", JSON.stringify(todos));
         countCompleted();
     }
 });
@@ -42,7 +49,7 @@ function newTodo(value) {
     todoCheckbox.type = "checkbox";
     todoCheckbox.name = "checkbox";
     todoCheckboxLabel.htmlFor = "checkbox";
-    
+
     todoCheckboxLabel.addEventListener("click", function (e) {
         if (todoCheckbox.checked) {
             todoCheckbox.checked = false;
@@ -63,9 +70,17 @@ function newTodo(value) {
 
     todoCross.textContent = "X";
     todoCross.addEventListener("click", function (e) {
+        // e.target.parentElement.remove();
+        // todos = todos.filter((t) => t !== obj);
+        // countCompleted();
+        // localStorage.setItem("todos", JSON.stringify(todos));
         e.target.parentElement.remove();
-        todos = todos.filter((t) => t !== obj);
+        todos = todos.filter((t) => t.value !== value);
         countCompleted();
+        if (todos.length === 0) {
+            updateUi(true);
+        }
+        localStorage.setItem("todos", JSON.stringify(todos));
     });
 
     todo.classList.add("todo");
@@ -82,6 +97,7 @@ function newTodo(value) {
         e.dataTransfer.effectAllowed = "move";
         e.dataTransfer.setData("text/plain", null);
         elem = e.target;
+        localStorage.setItem("todos", JSON.stringify(todos));
     });
     todo.addEventListener("dragover", (e) => {
         let el1;
@@ -96,6 +112,7 @@ function newTodo(value) {
         } else {
             el1.parentNode.insertBefore(elem, el1.nextSibling);
         }
+        localStorage.setItem("todos", JSON.stringify(todos));
     });
     todo.addEventListener("dragend", (e) => {
         elem = null;
@@ -115,7 +132,10 @@ function newTodo(value) {
                 checked: todo.querySelector("input").checked,
             })
         }
+        localStorage.setItem("todos", JSON.stringify(todos));
     });
+    
+    localStorage.setItem("todos", JSON.stringify(todos));
 
     todosContainer.appendChild(todo);
 }
@@ -124,6 +144,7 @@ function updateTodos(value, bool) {
     todos.forEach((t) => {
         if (t.value === value) {
             t.checked = bool;
+            localStorage.setItem("todos", JSON.stringify(todos));
         }
     });
 }
